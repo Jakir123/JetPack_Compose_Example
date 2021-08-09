@@ -22,7 +22,7 @@ class ExampleViewModel : ViewModel() {
 
     private fun generateList(){
         exampleList.add(JetpackExample(1,"Flutter Counter App"))
-        exampleList.add(JetpackExample(2,"Box Example"))
+        exampleList.add(JetpackExample(2,"Cleaning App Example"))
         exampleList.add(JetpackExample(3,"Column Example"))
     }
 }

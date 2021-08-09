@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import jakir.cse24.jetpackcomposeexample.model.JetpackExample
 import jakir.cse24.jetpackcomposeexample.ui.theme.JetpackComposeExampleTheme
+import jakir.cse24.jetpackcomposeexample.ui.view.cleaning_app.CleaningAppActivity
 import jakir.cse24.jetpackcomposeexample.ui.view.flutterCounter.FlutterCounterActivity
 import jakir.cse24.jetpackcomposeexample.ui.view.items.ExampleItemCard
 import jakir.cse24.jetpackcomposeexample.viewModel.ExampleViewModel
@@ -59,7 +60,7 @@ fun ExampleList(examples: List<JetpackExample>,contx: Context){
             ExampleItemCard(exampleItem = item, onclick = {
                 when (index){
                     0->{contx.startActivity(Intent(contx,FlutterCounterActivity::class.java))}
-                    1->{}
+                    1->{contx.startActivity(Intent(contx,CleaningAppActivity::class.java))}
                 }
                 Toast.makeText(contx, "", Toast.LENGTH_SHORT).show()
             }) 
