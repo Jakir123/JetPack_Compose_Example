@@ -1,6 +1,7 @@
 package jakir.cse24.jetpackcomposeexample.ui.view
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
@@ -14,10 +15,9 @@ import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import jakir.cse24.jetpackcomposeexample.model.JetpackExample
 import jakir.cse24.jetpackcomposeexample.ui.theme.JetpackComposeExampleTheme
-import jakir.cse24.jetpackcomposeexample.ui.view.TitleText
+import jakir.cse24.jetpackcomposeexample.ui.view.flutterCounter.FlutterCounterActivity
 import jakir.cse24.jetpackcomposeexample.ui.view.items.ExampleItemCard
 import jakir.cse24.jetpackcomposeexample.viewModel.ExampleViewModel
 
@@ -55,17 +55,14 @@ fun ExampleApp(viewModel: ExampleViewModel,contx: Context) {
 @Composable
 fun ExampleList(examples: List<JetpackExample>,contx: Context){
     LazyColumn(modifier = Modifier.fillMaxWidth()){
-        itemsIndexed(items = examples){ _, item ->
+        itemsIndexed(items = examples){ index, item ->
             ExampleItemCard(exampleItem = item, onclick = {
+                when (index){
+                    0->{contx.startActivity(Intent(contx,FlutterCounterActivity::class.java))}
+                    1->{}
+                }
                 Toast.makeText(contx, "", Toast.LENGTH_SHORT).show()
             }) 
         }
     }
-}
-
-
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
 }
